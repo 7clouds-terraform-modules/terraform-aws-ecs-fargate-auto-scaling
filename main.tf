@@ -119,9 +119,9 @@ resource "aws_appautoscaling_policy" "ecs_cpu_policy" {
   count              = var.CREATE_AUTO_SCALING_RESOURCES == true ? 1 : 0
   name               = var.AUTO_SCALING_CPU_POLICY_NAME
   policy_type        = "TargetTrackingScaling"
-  resource_id        = aws_appautoscaling_target.ecs_target.resource_id
-  scalable_dimension = aws_appautoscaling_target.ecs_target.scalable_dimension
-  service_namespace  = aws_appautoscaling_target.ecs_target.service_namespace
+  resource_id        = aws_appautoscaling_target.ecs_target[count.index].resource_id
+  scalable_dimension = aws_appautoscaling_target.ecs_target[count.index].scalable_dimension
+  service_namespace  = aws_appautoscaling_target.ecs_target[count.index].service_namespace
 
   target_tracking_scaling_policy_configuration {
     target_value = var.AUTO_SCALING_CPU_TARGET_VALUE
@@ -136,9 +136,9 @@ resource "aws_appautoscaling_policy" "ecs_memory_policy" {
   count              = var.CREATE_AUTO_SCALING_RESOURCES == true ? 1 : 0
   name               = var.AUTO_SCALING_MEMORY_POLICY_NAME
   policy_type        = "TargetTrackingScaling"
-  resource_id        = aws_appautoscaling_target.ecs_target.resource_id
-  scalable_dimension = aws_appautoscaling_target.ecs_target.scalable_dimension
-  service_namespace  = aws_appautoscaling_target.ecs_target.service_namespace
+  resource_id        = aws_appautoscaling_target.ecs_target[count.index].resource_id
+  scalable_dimension = aws_appautoscaling_target.ecs_target[count.index].scalable_dimension
+  service_namespace  = aws_appautoscaling_target.ecs_target[count.index].service_namespace
 
   target_tracking_scaling_policy_configuration {
     target_value = var.AUTO_SCALING_MEMORY_TARGET_VALUE
