@@ -47,7 +47,7 @@ variable "CONTAINER_NAME" {
 }
 
 variable "CONTAINER_PORT" {
-  type        = string
+  type        = number
   description = "Port on the container to associate with the load balancer"
 }
 
