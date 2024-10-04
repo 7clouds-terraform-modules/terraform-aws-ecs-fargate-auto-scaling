@@ -111,9 +111,12 @@ variable "FARGATE_MEMORY" {
   default = 4096
 }
 
-
 variable "CONTAINER_ENVIRONMENT_VARIABLES" {
-  type        = list(object)
+  type        = list(object({
+                      name = string
+                      value = string
+              }
+  ))
   description = "Environment variables used by the container"
   default = null
 }
