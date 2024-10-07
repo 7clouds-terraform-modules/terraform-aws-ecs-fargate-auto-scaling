@@ -38,10 +38,10 @@ resource "aws_security_group" "ecs_tasks" {
   dynamic "ingress" {
     for_each = var.SECURITY_GROUP_INGRESS_BLOCK
     content {
-      protocol    = ingress.value["SECURITY_GROUP_INGRESS_RULES_PROTOCOL"]
-      from_port   = ingress.value["SECURITY_GROUP_INGRESS_FROM_PORT"]
-      to_port     = ingress.value["SECURITY_GROUP_INGRESS_TO_PORT"]
-      cidr_blocks = ingress.value["SECURITY_GROUP_INGRESS_CIDR_BLOCK"]
+      protocol        = ingress.value["SECURITY_GROUP_INGRESS_RULES_PROTOCOL"]
+      from_port       = ingress.value["SECURITY_GROUP_INGRESS_FROM_PORT"]
+      to_port         = ingress.value["SECURITY_GROUP_INGRESS_TO_PORT"]
+      security_groups = ingress.value["SECURITY_GROUP_INGRESS_SECURITY_GROUP"]
     }
   }
 

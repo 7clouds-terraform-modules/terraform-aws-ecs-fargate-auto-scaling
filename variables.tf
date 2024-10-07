@@ -81,7 +81,7 @@ variable "SECURITY_GROUP_INGRESS_BLOCK" {
                       SECURITY_GROUP_INGRESS_FROM_PORT  = string,
                       SECURITY_GROUP_INGRESS_TO_PORT = string,
                       SECURITY_GROUP_INGRESS_RULES_PROTOCOL = string,
-                      SECURITY_GROUP_INGRESS_CIDR_BLOCK = list(string)
+                      SECURITY_GROUP_INGRESS_SECURITY_GROUP = list(string)
                   }))
 }
 
