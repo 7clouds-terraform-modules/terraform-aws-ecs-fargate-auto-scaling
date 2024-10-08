@@ -150,12 +150,6 @@ variable "AUTO_SCALING_MIN_CAPACITY" {
   default = 1
 }
 
-variable "AUTO_SCALING_RESOURCE_ID" {
-  type        = string
-  description = "Resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the ResourceId parameter at: AWS Application Auto Scaling API Reference"
-  default = null
-}
-
 variable "AUTO_SCALING_CPU_POLICY_NAME" {
   type        = string
   description = "Name of the policy for the CPU Utilization Tracking Scaling. Must be between 1 and 255 characters in length"

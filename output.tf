@@ -127,11 +127,6 @@ output "AUTO_SCALING_MIN_CAPACITY" {
   value     = var.AUTO_SCALING_MIN_CAPACITY
 }
 
-output "AUTO_SCALING_RESOURCE_ID" {
-  description = "Resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the ResourceId parameter at: AWS Application Auto Scaling API Reference"
-  value     = var.AUTO_SCALING_RESOURCE_ID
-}
-
 output "AUTO_SCALING_CPU_POLICY_NAME" {
   description = "Resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the ResourceId parameter at: AWS Application Auto Scaling API Reference"
   value     = var.AUTO_SCALING_CPU_POLICY_NAME
